@@ -17,7 +17,9 @@ jobs:
       
       - run: npm clean-install
       - run: npm run build 
-      - run: npx typedoc
+      - run: |
+          npm i -d @types/node
+          npx typedoc
 
       - name: push documentation files to docs branch
         uses: ad-m/github-push-action@v0.6.0
